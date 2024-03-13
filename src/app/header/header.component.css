@@ -1,3 +1,10 @@
 .header-spacer {
     flex: 1 1 auto;
+    transform: perspective(1000px) rotateX(10deg);
+}
+
+.mat-toolbar {
+    background: linear-gradient(180deg, #85FFBD, #FFFB7D);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
 }
