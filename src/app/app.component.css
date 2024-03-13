@@ -5,7 +5,8 @@
 
 .mat-drawer-content {
     height: 100%;
-    background-color: #f8f9fa;
+    background: linear-gradient(90deg, #ecfff5, #fffeef);
+
 }
 
 .mat-drawer-inner-container {
