@@ -1,0 +1,39 @@
+/* Mat side nav css */
+.mat-drawer-container {
+    height: 100%;
+}
+
+.mat-drawer-content {
+    height: 100%;
+    background-color: #f8f9fa;
+}
+
+.mat-drawer-inner-container {
+    height: 100%;
+
+}
+
+/* gradient background color for mat-drawer */
+.mat-drawer {
+    background: linear-gradient(180deg, #12a266 0%, #65b694 100%);
+    color: white;
+    min-width: 300px;
+}
+
+
+/* mat-drawer list items formatting and styling */
+
+mat-nav-list.mat-mdc-nav-list {
+    padding-top: 50px;
+    text-align: center;
+    border-radius: 0;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+mat-nav-list a {
+    color: white;
+    text-decoration: none;
+}

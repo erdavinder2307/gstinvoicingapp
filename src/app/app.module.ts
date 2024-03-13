@@ -11,8 +11,11 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from 'src/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -22,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CustomerComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -30,9 +34,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    SharedModule
   ],
-  providers: [],
+
+  providers: [MatSidenavModule,
+    MatButtonModule,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
