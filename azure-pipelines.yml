@@ -17,7 +17,7 @@ steps:
       workingDirectory: '$(System.DefaultWorkingDirectory)/gstinvoicingapp/'
       app_location: '/'
       app_build_command: 'npm run build --configuration=production'
-      output_location: 'dist/gst-invoicing-app/'
+      output_location: 'dist/'
       skip_api_build: true
       azure_static_web_apps_api_token: 'af068067d986e15d3a4863360353c397aec0606fb2eaa5d57ec4721d2777b0665-21be6d31-2d14-4cc4-b8ea-a9c072708f28010403057'
       production_branch: 'master'
