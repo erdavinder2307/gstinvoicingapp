@@ -14,7 +14,7 @@ steps:
     submodules: true
   - task: AzureStaticWebApp@0
     inputs:
-      workingDirectory: '$(System.DefaultWorkingDirectory)/GstInvoicingApp/'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/gstinvoicingapp/'
       app_location: '/'
       app_build_command: 'npm run build --configuration=production'
       output_location: 'dist/gst-invoicing-app/'
