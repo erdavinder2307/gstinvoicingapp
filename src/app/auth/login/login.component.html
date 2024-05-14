@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="login-container">
+    <mat-card class="login-card">
+        <mat-card-header>
+            <mat-card-title></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="card-content">
+                <div class="content-info">
+                    <div class="login-heading"> Bill Quick Invoice</div>
+                    <div class="login-subheading">
+                        Welcome to Bill Quick Invoice
+                    </div>
+                    <div class="login-description">
+                        It is a long established fact that a reader
+                        will be distracted by the readable content
+                        of a page when looking at its layout.
+                        The point of using Lorem Ipsum is that
+                        it has a more-or-less normal distribution
+                        of letters
+                    </div>
+
+
+                </div>
+                <mat-divider [vertical]="true"></mat-divider>
+                <div class="content-info">
+                    <div class="signin-info">
+                        Sign in to continue
+                    </div>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <mat-form-field>
+                            <input class="login-form-field" matInput placeholder="Username" formControlName="username"
+                                required>
+                            <mat-error *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+                                Username is required
+                            </mat-error>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input class="login-form-field" matInput type="password" placeholder="Password"
+                                formControlName="password" required>
+                            <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                                Password is required
+                            </mat-error>
+                        </mat-form-field>
+                        <br>
+                        <button mat-raised-button color="primary" type="submit"
+                            [disabled]="loginForm.invalid">Login</button>
+                    </form>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <div class="signup-link"></div>
+                    <!-- route to register route -->
+                    Don't have an account? <a [routerLink]="['/auth/register']">Sign Up</a>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<app-footer></app-footer>

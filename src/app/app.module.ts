@@ -5,9 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateinvoiceComponent } from './createinvoice/createinvoice.component';
 import { CustomerComponent } from './customer/customer.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from 'src/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -18,13 +18,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     CreateinvoiceComponent,
-    CustomerComponent,
+
     LoginComponent,
     RegisterComponent,
+    RegisterComponent,
+
 
 
   ],

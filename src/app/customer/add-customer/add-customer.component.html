@@ -1,0 +1,111 @@
+<app-header></app-header>
+<div class="add-customer-container">
+
+    <form [formGroup]="customerForm" class="add-customer-form" (ngSubmit)="onSubmit()">
+        <div class="add-customer">Add New Customer</div>
+        <div class="customer-form">
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput class="mat-input" maxlength="50" formControlName="firstName" required>
+                <mat-error *ngIf="customerForm.get('firstName')?.invalid && customerForm.get('firstName')?.touched">
+                    Please enter a valid First name.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input class="mat-input" matInput maxlength="50" formControlName="lastName" required>
+                <mat-error *ngIf="customerForm.get('lastName')?.invalid && customerForm.get('lastName')?.touched">
+                    Please enter a valid Last name.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Company Name</mat-label>
+                <input class="mat-input" maxlength="100" matInput formControlName="companyName">
+                <mat-error *ngIf="customerForm.get('companyName')?.invalid && customerForm.get('companyName')?.touched">
+                    Please enter a valid Company name.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>GST No</mat-label>
+                <input class="mat-input" maxlength="20" matInput formControlName="gSTNumber" required>
+                <mat-error *ngIf="customerForm.get('gSTNumber')?.invalid && customerForm.get('gSTNumber')?.touched">
+                    Please enter a valid GST number.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input class="mat-input" maxlength="300" matInput formControlName="address" required>
+                <mat-error *ngIf="customerForm.get('address')?.invalid && customerForm.get('address')?.touched">
+                    Please enter a valid Address.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>City</mat-label>
+                <input class="mat-input" maxlength="50" matInput formControlName="city" required>
+                <mat-error *ngIf="customerForm.get('city')?.invalid && customerForm.get('city')?.touched">
+                    Please enter a valid City.
+                </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <mat-label>State</mat-label>
+                <input class="mat-input" matInput formControlName="state" required>
+                <mat-error *ngIf="customerForm.get('state')?.invalid && customerForm.get('state')?.touched">
+                    Please enter a valid State.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Country</mat-label>
+                <mat-select class="mat-input" formControlName="country" required>
+                    <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="customerForm.get('country')?.invalid && customerForm.get('country')?.touched">
+                    Please select a valid Country.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Postal Code</mat-label>
+                <input class="mat-input" maxlength="20" matInput formControlName="postalCode" required>
+                <mat-error *ngIf="customerForm.get('postalCode')?.invalid && customerForm.get('postalCode')?.touched">
+                    Please enter a valid Postal code.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+                <input class="mat-input" maxlength="20" matInput formControlName="phoneNumber" required>
+                <mat-error *ngIf="customerForm.get('phoneNumber')?.invalid && customerForm.get('phoneNumber')?.touched">
+                    Please enter a valid Phone number.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input  class="mat-input" maxlength="200" matInput formControlName="email" required email>
+                <mat-error *ngIf="customerForm.get('email')?.invalid && customerForm.get('email')?.touched">
+                    Please enter a valid Email address.
+                </mat-error>
+            </mat-form-field>
+            <button mat-fab extended matPrefix (click)="f_input.click()">
+                <mat-icon>attach_file</mat-icon>
+                Upload Logo
+            </button>
+            <mat-form-field hidden="true">
+                <mat-label>Company Logo</mat-label>
+
+                <input type="text" matInput formControlName="companyLogo" />
+                <input type="file" multiple hidden="true" #f_input (change)="handleFileInputChange(f_input.files)" />
+                <mat-error>This field is required</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="customer-save">
+            <button mat-raised-button extended matPrefix type="submit" [disabled]="customerForm.invalid">
+                <mat-icon>save</mat-icon>
+                Save Customer</button>
+        </div>
+
+    </form>
+</div>
+<app-footer></app-footer>

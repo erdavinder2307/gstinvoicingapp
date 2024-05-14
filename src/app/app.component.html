@@ -1,12 +1,17 @@
 <mat-sidenav-container class="sidebar-container">
-  <mat-sidenav #sidenav mode="side" class="sidenav">
+  <mat-sidenav #sidenav mode="side" opened="true" class="sidenav">
     <mat-nav-list>
       <!-- Add your navigation links here -->
       <!-- mat icon for dashboard -->
-      <a mat-button [routerLink]="['/dashboard']" matRippleDisabled>
-        <mat-icon>dashboard</mat-icon>
-        <span>Home</span>
-      </a>
+      <div> <a mat-button [routerLink]="['/dashboard']">
+          <mat-icon>dashboard</mat-icon>
+          <span>Home</span>
+        </a></div>
+      <div> <a mat-button [routerLink]="['/customer']">
+          <mat-icon>people</mat-icon>
+          <span>Customers</span>
+        </a></div>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">

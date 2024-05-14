@@ -17,7 +17,7 @@
 .mat-drawer {
     background: linear-gradient(180deg, #12a266 100%, #65b694 100%);
     color: white;
-    min-width: 300px;
+    min-width: 200px;
 }
 
 
@@ -25,10 +25,11 @@
 
 mat-nav-list.mat-mdc-nav-list {
     padding-top: 50px;
-    text-align: center;
+    padding-left: 20px;
+    text-align: left;
     border-radius: 0;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 500;
 
 }

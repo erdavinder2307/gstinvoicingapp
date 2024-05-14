@@ -1,0 +1,50 @@
+.add-customer-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+.add-customer-container {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    mat-form-field {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    mat-form-field {
+        width: 48%;
+        margin: 0 1%;
+    }
+}
+
+.add-customer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    font-weight: 800;
+    font-size: larger;
+}
+
+.customer-save {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-error {
+    font-size: 10px;
+    color: red;
+}
