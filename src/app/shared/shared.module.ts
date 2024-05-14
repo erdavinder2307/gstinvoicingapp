@@ -11,6 +11,12 @@ import { HeaderComponent } from '../header/header.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { FooterComponent } from '../footer/footer.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -29,6 +35,12 @@ import { FooterComponent } from '../footer/footer.component';
     MatToolbarModule,
     MatCardModule,
     MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule
 
 
   ],
@@ -42,7 +54,13 @@ import { FooterComponent } from '../footer/footer.component';
     HeaderComponent,
     MatCardModule,
     MatTableModule,
-    FooterComponent
+    FooterComponent,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule
 
   ],
   providers: [],
