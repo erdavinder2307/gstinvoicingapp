@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CreateinvoiceComponent } from './createinvoice/createinvoice.component';
 import { CustomerComponent } from './customer/customer.component';
 import { LoginComponent } from './auth/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from 'src/material.module';
@@ -16,7 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-
+import { SpinnerComponent } from './common/spinner/spinner.component';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 
 @NgModule({
@@ -27,8 +28,7 @@ import { SharedModule } from './shared/shared.module';
     LoginComponent,
     RegisterComponent,
     RegisterComponent,
-
-
+    SpinnerComponent,
 
   ],
   imports: [
@@ -43,7 +43,13 @@ import { SharedModule } from './shared/shared.module';
   ],
 
   providers: [MatSidenavModule,
-    MatButtonModule,],
+    MatButtonModule,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

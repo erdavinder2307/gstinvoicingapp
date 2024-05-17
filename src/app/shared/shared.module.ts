@@ -17,6 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { MatOptionModule } from '@angular/material/core';
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatProgressSpinnerModule
 
 
   ],
@@ -60,7 +63,8 @@ import { MatOptionModule } from '@angular/material/core';
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [],
