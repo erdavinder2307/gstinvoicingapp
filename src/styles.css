@@ -5,3 +5,7 @@
     margin-bottom: 20px;
 
 }
+
+mat-sidenav-content.mat-drawer-content.mat-sidenav-content.sidenav-content {
+    height: 100vh;
+}
