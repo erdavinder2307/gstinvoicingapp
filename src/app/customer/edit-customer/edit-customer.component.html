@@ -1,8 +1,8 @@
 <app-header></app-header>
-<div class="add-customer-container">
+<div class="edit-customer-container">
 
-    <form [formGroup]="customerForm" class="add-customer-form" (ngSubmit)="onSubmit()">
-        <div class="add-customer">Add New Customer</div>
+    <form [formGroup]="customerForm" class="edit-customer-form" (ngSubmit)="onSubmit()">
+        <div class="edit-customer">Edit Customer</div>
         <div class="customer-form">
             <mat-form-field>
                 <mat-label>First Name</mat-label>
@@ -34,10 +34,10 @@
                 </mat-error>
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Address</mat-label>
+                <mat-label>Editress</mat-label>
                 <input class="mat-input" maxlength="300" matInput formControlName="address" required>
                 <mat-error *ngIf="customerForm.get('address')?.invalid && customerForm.get('address')?.touched">
-                    Please enter a valid Address.
+                    Please enter a valid Editress.
                 </mat-error>
             </mat-form-field>
             <mat-form-field>
@@ -104,13 +104,12 @@
                     (click)="$event.stopPropagation()" />
                 <mat-error>This field is required</mat-error>
             </mat-form-field>
-
         </div>
 
         <div class="customer-save">
             <button mat-raised-button extended matPrefix type="submit" [disabled]="customerForm.invalid">
                 <mat-icon>save</mat-icon>
-                Save Customer</button>
+                Update Customer</button>
         </div>
 
     </form>
