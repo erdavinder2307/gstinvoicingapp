@@ -34,13 +34,12 @@ export class AddCustomerComponent {
 
   onSubmit() {
     if (this.customerForm.valid) {
-      console.log(this.customerForm.value);
       //append default value for id in the form
       this.customerForm.value.id = "";
 
       // let data = JSON.stringify(this.customerForm.value);
       this.customerService.createCustomer(this.customerForm.value).subscribe((res: any) => {
-        console.log(res);
+
         this.router.navigate(['/customer']);
       });
     }
@@ -49,11 +48,11 @@ export class AddCustomerComponent {
   handleFileInputChange(files: any) {
     debugger;
     const file = files[0];
-    console.log(file);
+
     //file to base64 to pass it to the backend
     const reader = new FileReader();
     reader.onload = (e: any) => {
-      console.log(e.target.result);
+
       this.customerForm.patchValue({
         companyLogo: e.target.result
       });

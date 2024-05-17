@@ -26,7 +26,6 @@ export class CustomerComponent {
   }
   deleteCustomer(customer: any) {
     this.customerService.deleteCustomer(customer.id).subscribe((res: any) => {
-      console.log(res);
       this.getCustomers();
     });
   }

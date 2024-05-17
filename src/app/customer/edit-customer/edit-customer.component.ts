@@ -46,12 +46,12 @@ export class EditCustomerComponent {
 
   onSubmit() {
     if (this.customerForm.valid) {
-      console.log(this.customerForm.value);
+
 
       this.customerForm.value.id = this.customerId;
       // let data = JSON.stringify(this.customerForm.value);
       this.customerService.updateCustomer(this.customerId, this.customerForm.value).subscribe((res: any) => {
-        console.log(res);
+
         this.router.navigate(['/customer']);
       });
     }
@@ -61,11 +61,11 @@ export class EditCustomerComponent {
 
 
     const file = files[0];
-    console.log(file);
+
     //file to base64 to pass it to the backend
     const reader = new FileReader();
     reader.onload = (e: any) => {
-      console.log(e.target.result);
+
       this.customerForm.patchValue({
         companyLogo: e.target.result
       });
