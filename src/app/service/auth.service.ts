@@ -25,14 +25,14 @@ export class AuthService {
 
     return this.http.post(`${this.apiUrl}/signup`, data).subscribe((res) => {
 
-      console.log(res);
+
       return res;
     });
   }
 
   logout() {
     return this.http.post(`${this.apiUrl}/logout`, {}).subscribe((res) => {
-      console.log(res);
+
       localStorage.removeItem('token');
       this.router.navigate(['/auth']);
     });
