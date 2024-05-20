@@ -1,10 +1,8 @@
 @import '~material-design-icons/iconfont/material-icons.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'assets/theme.scss';
 
-.mat-input {
-    margin-top: 20px;
-    margin-bottom: 20px;
 
-}
 
 mat-sidenav-content.mat-drawer-content.mat-sidenav-content.sidenav-content {
     height: 100vh;
