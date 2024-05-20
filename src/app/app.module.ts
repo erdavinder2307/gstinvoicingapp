@@ -18,18 +18,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './common/spinner/spinner.component';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { ConfirmDialogComponent } from './common/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateinvoiceComponent,
-
     LoginComponent,
     RegisterComponent,
     RegisterComponent,
     SpinnerComponent,
-
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,

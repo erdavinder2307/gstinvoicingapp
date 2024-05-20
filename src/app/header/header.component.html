@@ -3,13 +3,13 @@
         (click)="toggleSidenav()">
         <mat-icon>menu</mat-icon>
     </button>
-    <span>BillQuick GST</span>
+    <span>Quickbill Invoice</span>
     <span class="header-spacer"></span>
     <button *ngIf="isLoggedIn()" mat-icon-button class="header-icon" aria-label="header icon-button with heart icon">
         <mat-icon>person</mat-icon>
     </button>
     <!-- logout button with icon in material  -->
-    <button *ngIf="isLoggedIn()" (click)="logout()" mat-icon-button class="header-icon"
+    <button *ngIf="isLoggedIn()" (click)="confirmLogout()" mat-icon-button class="header-icon"
         aria-label="header icon-button with heart icon">
         <mat-icon>exit_to_app</mat-icon>
     </button>

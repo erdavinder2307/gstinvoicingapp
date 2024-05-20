@@ -41,26 +41,25 @@
 }
 
 .login-heading {
-    margin-bottom: 20px;
+
     font-size: larger;
     font-weight: 900;
 
 }
 
 .login-subheading {
-    margin-bottom: 20px;
+
     font-size: large;
     font-weight: 500;
 }
 
 .login-description {
-    margin-bottom: 20px;
+
     font-size: medium;
     font-weight: 400;
 }
 
 .forgot-password {
-    margin-top: 20px;
     font-size: medium;
     font-weight: 400;
     color: blue;
@@ -68,7 +67,6 @@
 }
 
 .signup-link {
-    margin-top: 20px;
     font-size: medium;
     font-weight: 400;
     color: blue;
@@ -77,8 +75,6 @@
 
 
 .login-form-field {
-    margin-bottom: 20px;
-
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: medium;

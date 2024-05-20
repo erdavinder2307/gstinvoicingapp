@@ -4,7 +4,6 @@ import { CustomerComponent } from './customer.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '../auth/auth.guard';
-import { MaterialModule } from 'src/material.module';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
@@ -22,7 +21,6 @@ const routes = [
 
     CommonModule,
     SharedModule,
-
     RouterModule.forChild(routes)
   ]
 })
