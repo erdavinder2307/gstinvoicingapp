@@ -1,0 +1,51 @@
+trigger:
+- master  # You can specify the branch to trigger the pipeline
+
+pool:
+  vmImage: 'ubuntu-latest'  # Use a Linux agent
+
+variables:
+  solution: '**/*.sln'  # Path to your .sln file
+  buildConfiguration: 'Release'
+  azureSubscription: 'gstinvoicingapi-connection-2'
+  appName: 'gstinvoicingapi'
+  resourceGroupName: 'solidev'
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '8.x'
+    includePreviewVersions: true
+
+- script: dotnet restore
+  displayName: 'dotnet restore'
+
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+- task: AzureRmWebAppDeployment@4
+  
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'gstinvoicingapi-connection-2'
+    appType: 'webAppLinux'
+    WebAppName: 'gstinvoicingapi'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'solidev'
+    SlotName: 'production'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+    RuntimeStack: 'DOTNETCORE|8.0'
