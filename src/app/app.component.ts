@@ -14,6 +14,7 @@ export class AppComponent {
   isUserLoggedIn = false;
   title = 'gstinvoicapp';
   @ViewChild('sidenav') public sidenav: MatSidenav | any;
+  isMobileScreen = false;
 
   constructor(private sideNavService: SideNavService, private authService: AuthService, private router: Router) {
     this.router.events.pipe(
@@ -26,6 +27,8 @@ export class AppComponent {
   }
   ngAfterViewInit() {
     this.sideNavService.setSidenav(this.sidenav);
+    this.isMobileScreen = window.innerWidth < 768;
+
   }
 
 }

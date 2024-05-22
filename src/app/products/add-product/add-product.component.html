@@ -1,0 +1,118 @@
+<app-header></app-header>
+<div class="add-product-container">
+
+    <form [formGroup]="productForm" class="add-product-form" (ngSubmit)="onSubmit()">
+        <div class="add-product">Add New Product</div>
+        <div class="product-form">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput class="mat-input" maxlength="50" formControlName="name" required>
+                <mat-error *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+                    Please enter a valid First name.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <input class="mat-input" matInput maxlength="50" formControlName="description" required>
+                <mat-error *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched">
+                    Please enter a valid Last name.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Price</mat-label>
+                <input class="mat-input" maxlength="100" matInput formControlName="price">
+                <mat-error *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
+                    Please enter a valid Company name.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Category</mat-label>
+                <input class="mat-input" maxlength="20" matInput formControlName="category" required>
+                <mat-error *ngIf="productForm.get('category')?.invalid && productForm.get('category')?.touched">
+                    Please enter a valid GST number.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Image Url</mat-label>
+                <input class="mat-input" maxlength="300" matInput formControlName="imageUrl" required>
+                <mat-error *ngIf="productForm.get('imageUrl')?.invalid && productForm.get('imageUrl')?.touched">
+                    Please enter a valid Address.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Sub Category</mat-label>
+                <input class="mat-input" maxlength="50" matInput formControlName="subCategory" required>
+                <mat-error *ngIf="productForm.get('subCategory')?.invalid && productForm.get('subCategory')?.touched">
+                    Please enter a valid City.
+                </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <mat-label>Brand</mat-label>
+                <input class="mat-input" matInput formControlName="brand" required>
+                <mat-error *ngIf="productForm.get('brand')?.invalid && productForm.get('brand')?.touched">
+                    Please enter a valid State.
+                </mat-error>
+            </mat-form-field>
+            <!-- <mat-form-field>
+                <mat-label>Country</mat-label>
+                <mat-select class="mat-input" formControlName="country" required>
+                    <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="productForm.get('country')?.invalid && productForm.get('country')?.touched">
+                    Please select a valid Country.
+                </mat-error>
+            </mat-form-field> -->
+            <mat-form-field>
+                <mat-label>Size</mat-label>
+                <input class="mat-input" maxlength="20" matInput formControlName="size" required>
+                <mat-error *ngIf="productForm.get('size')?.invalid && productForm.get('size')?.touched">
+                    Please enter a valid Postal code.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Color</mat-label>
+                <input class="mat-input" maxlength="20" matInput formControlName="color" required>
+                <mat-error *ngIf="productForm.get('color')?.invalid && productForm.get('color')?.touched">
+                    Please enter a valid Phone number.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Tax Type</mat-label>
+                <input  class="mat-input" maxlength="200" matInput formControlName="taxType" required>
+                <mat-error *ngIf="productForm.get('taxType')?.invalid && productForm.get('taxType')?.touched">
+                    Please enter a valid Email address.
+                </mat-error>
+            </mat-form-field>
+            <!-- <div class="upload-button-image">
+                <button mat-fab extended matPrefix type="button" (click)="f_input.click()">
+                    <mat-icon>attach_file</mat-icon>
+                    Upload Logo
+                </button>
+                <div class="uploaded-image-card" *ngIf="productForm.value.companyLogo">
+                    <img class="uploaded-image" [src]="productForm.value.companyLogo" alt="Uploaded Image">
+                </div>
+            </div>
+            <mat-form-field hidden="true">
+                <mat-label>Company Logo</mat-label>
+
+                <input type="text" matInput formControlName="companyLogo" />
+                <input type="file" multiple hidden="true" #f_input (change)="handleFileInputChange(f_input.files)"
+                    (click)="$event.stopPropagation()" />
+                <mat-error>This field is required</mat-error>
+            </mat-form-field> -->
+
+        </div>
+
+        <div class="product-save">
+            <button mat-raised-button color="primary" type="submit" [disabled]="productForm.invalid">
+                <mat-icon>save</mat-icon>
+                Save Product</button>
+        </div>
+
+    </form>
+</div>
+<app-footer></app-footer>

@@ -1,17 +1,7 @@
 <mat-sidenav-container class="sidebar-container">
-  <mat-sidenav #sidenav mode="side" [opened]="isUserLoggedIn" class="sidenav">
-    <mat-nav-list>
-
-      <div> <a mat-button [routerLink]="['/dashboard']">
-          <mat-icon>dashboard</mat-icon>
-          <span>Home</span>
-        </a></div>
-      <div> <a mat-button [routerLink]="['/customer']">
-          <mat-icon>people</mat-icon>
-          <span>Customers</span>
-        </a></div>
-
-    </mat-nav-list>
+  <mat-sidenav #sidenav mode="side" [mode]="isMobileScreen?'over':'side'" [opened]="isUserLoggedIn && !isMobileScreen"
+    class="sidenav">
+    <app-side-nav></app-side-nav>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
     <app-spinner></app-spinner>

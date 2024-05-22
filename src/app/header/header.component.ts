@@ -22,7 +22,7 @@ export class HeaderComponent {
   confirmLogout() {
     this.dialog.open(ConfirmDialogComponent, {
       width: '250px',
-      data: { message: 'Are you sure you want to logout?' }
+      data: { message: 'Are you sure you want to logout?', title: 'Logout' }
     }).afterClosed().subscribe(result => {
       if (result) {
         this.logout();
