@@ -1,0 +1,25 @@
+.list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    mat-table {
+        width: 100%;
+    }
+
+    mat-header-row,
+    mat-cell {
+        padding: 5px;
+        text-align: left;
+    }
+
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

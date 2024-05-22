@@ -9,6 +9,10 @@ import { SideNavService } from './side-nav.service';
 
 })
 export class SideNavComponent {
+  isMobileScreen = false;
 
+  constructor() {
+    this.isMobileScreen = window.innerWidth < 768;
+  }
 
 }

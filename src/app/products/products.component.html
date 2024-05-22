@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div class="product-container">
+    <div class="product-list">
+        <mat-card class="product-card">
+            <mat-card-header>
+                <div class="list-header">
+                    <mat-card-title>Products</mat-card-title>
+                    <button [routerLink]="['/product/add-product']" mat-icon-button color="primary"
+                        aria-label="Example icon button with a home icon">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </div>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="product-table">
+                    <mat-table [dataSource]="dataSource" matSort>
+                        <!-- id column -->
+                        <ng-container matColumnDef="id">
+                            <mat-header-cell hidden="true" *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                            <mat-cell hidden="true" *matCellDef="let product"> {{product.id}} </mat-cell>
+                        </ng-container>
+
+                        <!-- name column -->
+                        <ng-container matColumnDef="name">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                            <mat-cell *matCellDef="let product"> {{product.name}}
+                            </mat-cell>
+                        </ng-container>
+
+                        <!-- email column -->
+                        <ng-container matColumnDef="email">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+                            <mat-cell *matCellDef="let product"> {{product.category}} </mat-cell>
+
+                        </ng-container>
+                        <!-- phone column -->
+                        <ng-container matColumnDef="phone">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Brand </mat-header-cell>
+                            <mat-cell *matCellDef="let product"> {{product.brand}} </mat-cell>
+                        </ng-container>
+                        <!-- address column -->
+
+                        <ng-container matColumnDef="address">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Tax Type </mat-header-cell>
+                            <mat-cell *matCellDef="let product"> {{product.taxType}} </mat-cell>
+                        </ng-container>
+                        <!-- action column -->
+                        <ng-container matColumnDef="action">
+                            <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+                            <mat-cell *matCellDef="let product">
+                                <button mat-icon-button color="primary" (click)="editProduct(product)">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                                <button mat-icon-button color="warn" (click)="deleteProduct(product)">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<app-footer></app-footer>

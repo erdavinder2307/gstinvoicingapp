@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./auth/login.module').then(m => m.LoginModule) },
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule), },
   { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule), },
+  { path: 'product', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule), },
 
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
   { path: '**', redirectTo: '/404', pathMatch: 'full' }

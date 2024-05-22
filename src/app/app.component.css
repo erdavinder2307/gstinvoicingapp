@@ -17,7 +17,7 @@
 .mat-drawer {
     background: linear-gradient(180deg, #12a266 100%, #65b694 100%);
     color: white;
-    min-width: 200px;
+    /* min-width: 200px; */
 }
 
 

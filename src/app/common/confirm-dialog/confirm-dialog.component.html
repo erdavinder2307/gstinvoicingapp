@@ -1,6 +1,6 @@
-<h2 mat-dialog-title>Confirmation Dialog</h2>
-<p mat-dialog-content>Are you sure you want to proceed?</p>
-<div class="buttons" mat-dialog-actions>
+<h2 mat-dialog-title>{{data.title}}</h2>
+<p mat-dialog-content>{{data.message}}</p>
+<div class="mat-button btn" mat-dialog-actions>
     <button mat-button color="primary" (click)="confirm()">Confirm</button>
-    <button mat-button color="secondary" [mat-dialog-close]="true">Cancel</button>
+    <button mat-button color="secondary" (click)="cancel()">Cancel</button>
 </div>
