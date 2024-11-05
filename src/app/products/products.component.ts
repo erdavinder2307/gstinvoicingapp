@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // Import the Router module
 import { ProductsService } from '../service/products.service';
+import { InvoiceService } from '../service/invoice.service';
 
 @Component({
   selector: 'app-products',
@@ -11,8 +12,9 @@ export class ProductsComponent {
   dataSource: any;
   displayedColumns: string[] = ['id', 'name', 'email', 'phone', 'address', 'action'];
 
-  constructor(private productsService: ProductsService, private router: Router) { // Inject the Router module
+  constructor(private productsService: ProductsService, private router: Router, private invoiceService: InvoiceService) { // Inject the Router module
     this.getProductss();
+    //this.generateInvoice();
   }
 
   getProductss() {
@@ -30,5 +32,13 @@ export class ProductsComponent {
     });
   }
 
+  generateInvoice() {
+    this.invoiceService.generateInvoice();
+  }
+
 
 }
+function saveAs(data: Blob, arg1: string) {
+  throw new Error('Function not implemented.');
+}
+

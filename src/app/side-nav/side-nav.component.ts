@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { MatDrawer, MatSidenav } from '@angular/material/sidenav';
 import { SideNavService } from './side-nav.service';
 
@@ -13,6 +13,13 @@ export class SideNavComponent {
 
   constructor() {
     this.isMobileScreen = window.innerWidth < 768;
+  }
+
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize(width: number) {
+    if (width < 768) {
+      this.isMobileScreen = true;
+    }
   }
 
 }

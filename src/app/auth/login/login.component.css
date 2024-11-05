@@ -79,3 +79,9 @@
     border-radius: 5px;
     font-size: medium;
 }
+
+@media screen and (max-width: 600px) {
+    .card-content {
+        flex-direction: column;
+    }
+}

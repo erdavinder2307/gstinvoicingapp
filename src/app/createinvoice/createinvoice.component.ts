@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InvoiceService } from '../service/invoice.service';
 
 @Component({
   selector: 'app-createinvoice',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./createinvoice.component.css']
 })
 export class CreateinvoiceComponent {
+  constructor(private invoiceService: InvoiceService) {
+
+  }
+
+  // generateInvoice() {
+  //   this.invoiceService.generateInvoice().subscribe((data) => {
+  //     console.log(data);
+  //   });
+  // }
 
 }

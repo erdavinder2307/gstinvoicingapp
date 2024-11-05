@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { SideNavService } from './side-nav/side-nav.service';
 import { AuthService } from './service/auth.service';
@@ -29,6 +29,13 @@ export class AppComponent {
     this.sideNavService.setSidenav(this.sidenav);
     this.isMobileScreen = window.innerWidth < 768;
 
+  }
+
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onResize(width: number) {
+    if (width < 768) {
+      this.isMobileScreen = true;
+    }
   }
 
 }
